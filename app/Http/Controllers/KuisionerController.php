@@ -10,6 +10,8 @@ class KuisionerController extends Controller
 {
   public function createStep1(Request $request){
     $value = new JawabanKuisioner();
-    return view('kuisioner.create-step1');
+    $data['keterangan'] = $value->keterangan;
+    $data['kuisioner'] = $request->session()->get('kuisioner');
+    return view('kuisioner.create-step1', $data);
   }
 }

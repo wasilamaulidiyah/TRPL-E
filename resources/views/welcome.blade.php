@@ -80,17 +80,17 @@
             @endif
 
             <div class="image">
-              <img src="{{asset('img/logopc.png')}}" class="img-circle" alt="User Image">
+              <img src="{{asset('gambar/logopc.png')}}" class="img-circle" alt="Logo Image">
             </div>
-            
+
             <div class="content">
                 <div class="title m-b-md">
                     Pet Care
                 </div>
 
-                <div class="links">
+                {{-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
-                </div>
+                </div> --}}
             </div>
 
         </div>
