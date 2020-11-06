@@ -10,6 +10,9 @@ class CreateKuisionerTable extends Migration
 
     public function up()
     {
+      Schema::table('kuisioner', function (Blueprint $table) {
+        $table->dropColumn(['A2', 'A3', 'A4', 'B2', 'B3', 'B4']);
+      });
         Schema::create('kuisioner', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('A1')->nullable();
