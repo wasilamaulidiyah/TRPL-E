@@ -7,6 +7,13 @@
           <form method="POST" action="{{route('kuisioner.postCreateStep1')}}" enctype="multipart/form-data">
             <div class="card">
               <div class="card-header">Kitten (1-4 Minggu)</div>
+              @if (session('message'))
+              <div class="col-md-12">
+                <div class="alert alert-success">
+                  ((session ('message')))
+                </div>
+              </div>
+              @endif
               <div class="card-body">
                     @csrf
                     <div class="form-group">
