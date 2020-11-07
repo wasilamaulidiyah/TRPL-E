@@ -11,15 +11,14 @@
                     @csrf
                     <div class="form-group">
                     <div class="col-md-12">
-                            <label>Apakah kucing sudah memasuki usia diatas 8 minggu ?
-                            </label>
+                            <label>Apakah kucing sudah memasuki usia diatas 8 minggu ?</label>
                             @php
                               $i = 2;
                             @endphp
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="Q2" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q2', $kuisioner->Q2 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                <input type="radio" name="Q2" class="form-check-input" value="{{ $i }}" {{ $i == old('Q2', $kuisioner->Q2 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -46,7 +45,7 @@
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="Q3" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q3', $kuisioner->Q3 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                <input type="radio" name="Q3" class="form-check-input" value="{{ $i }}" {{ $i == old('Q3', $kuisioner->Q3 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -71,7 +70,7 @@
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="Q4" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q4', $kuisioner->Q4 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                <input type="radio" name="Q4" class="form-check-input" value="{{ $i }}" {{ $i == old('Q4', $kuisioner->Q4 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -96,7 +95,7 @@
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="Q5" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q5', $kuisioner->Q5 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                <input type="radio" name="Q5" class="form-check-input" value="{{ $i }}" {{ $i == old('Q5', $kuisioner->Q5 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -121,7 +120,7 @@
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="Q6" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q6', $kuisioner->Q6 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                <input type="radio" name="Q6" class="form-check-input" value="{{ $i }}" {{ $i == old('Q6', $kuisioner->Q6 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -148,7 +147,7 @@
                               @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="Q7" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q7', $kuisioner->Q7 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                <input type="radio" name="Q7" class="form-check-input" value="{{ $i }}" {{ $i == old('Q7', $kuisioner->Q7 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -173,7 +172,7 @@
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="Q8" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q8', $kuisioner->Q8 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                <input type="radio" name="Q8" class="form-check-input" value="{{ $i }}" {{ $i == old('Q8', $kuisioner->Q8 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -194,7 +193,7 @@
                           <div class="col-md-12">
                             <a href="{{ route('kuisioner.createStep1') }}" class="btn btn-danger">Kembali</a>
                               <button type="submit" class="btn btn-primary">
-                                  Next
+                                  Simpan
                               </button>
                           </div>
                       </div>

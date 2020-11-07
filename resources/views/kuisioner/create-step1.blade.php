@@ -10,7 +10,7 @@
               @if (session('message'))
               <div class="col-md-12">
                 <div class="alert alert-success">
-                  ((session ('message')))
+                  {{session ('message')}}
                 </div>
               </div>
               @endif
@@ -27,7 +27,7 @@
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" name="P1" class="form-check-input"
-                                value="{{ $1 }}" {{ $1 == old('P1', $kuisioner-> P1 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                value="{{ $i }}" {{ $i == old('P1', $kuisioner->P1 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -55,7 +55,7 @@
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" name="P2" class="form-check-input"
-                                value="{{ $1 }}" {{ $1 == old('P2', $kuisioner->P2 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                value='{{ $i }}' {{ $i == old('P2', $kuisioner->P2 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -81,7 +81,7 @@
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" name="P3" class="form-check-input"
-                                value="{{ $1 }}" {{ $1 == old('P3', $kuisioner->P3 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                value="{{ $i }}" {{ $i == old('P3', $kuisioner->P3 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -107,7 +107,7 @@
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" name="P4" class="form-check-input"
-                                value="{{ $1 }}" {{ $1 == old('P4', $kuisioner->P4 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                value="{{ $i }}" {{ $i == old('P4', $kuisioner->P4 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -133,7 +133,7 @@
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" name="P5" class="form-check-input"
-                                value="{{ $1 }}" {{ $1 == old('P5', $kuisioner->P5 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                value="{{ $i }}" {{ $i == old('P5', $kuisioner->P5 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -162,7 +162,7 @@
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" name="P6" class="form-check-input"
-                                value="{{ $1 }}" {{ $1 == old('P6', $kuisioner->P6 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                value="{{ $i }}" {{ $i == old('P6', $kuisioner->P6 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -188,7 +188,7 @@
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" name="P7" class="form-check-input"
-                                value="{{ $1 }}" {{ $1 == old('P7', $kuisioner->P7 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                value="{{ $i }}" {{ $i == old('P7', $kuisioner->P7 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -214,7 +214,7 @@
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" name="P8" class="form-check-input"
-                                value="{{ $1 }}" {{ $1 == old('P8', $kuisioner->P8 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                value="{{ $i }}" {{ $i == old('P8', $kuisioner->P8 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -240,7 +240,7 @@
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" name="P9" class="form-check-input"
-                                value="{{ $1 }}" {{ $1 == old('P9', $kuisioner->P9 ?? '') ? 'checked' : '' }}>{{ $item }}
+                                value="{{ $i }}" {{ $i == old('P9', $kuisioner->P9 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php

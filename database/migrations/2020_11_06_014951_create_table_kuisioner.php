@@ -27,12 +27,7 @@ class CreateTableKuisioner extends Migration
             $table->char('Q6')->nullable();
             $table->char('Q7')->nullable();
             $table->char('Q8')->nullable();
-            $table->char('R1')->nullable();
-            $table->char('R2')->nullable();
-            $table->char('R3')->nullable();
-            $table->char('R4')->nullable();
-            $table->char('R5')->nullable();
-            $table->char('R6')->nullable();
+            
             $table->timestamps();
         });
     }
