@@ -36,13 +36,9 @@ class KuisionerController extends Controller
     }
     else {
       $kuisioner = $request->session()->get('kuisioner');
-      // <!--$kuisioner->fill($request->all());-->
-
-      // $save = $kuisioner->save();
-      // if($save){
-      //   $request->session()->put('kuisioner', $kuisioner);
-        // return redirect('kuisioner/create-step1')->with(['message'=> 'Jawaban Berhasil Disimpan']);
-      }
+      $kuisioner->fill($request->all());
+      $request->session()->put('kuisioner', $kuisioner);
+    }
       return redirect('kuisioner/create-step2');
     }
 
