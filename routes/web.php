@@ -20,4 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('kuisioner/create-step1', 'KuisionerController@createStep1')->name('kuisioner.createStep1');
-Route::post('kuisioner/post-step1', 'KuisionerController@postCreateStep1')->name('kuisioner.postCreateStep1');
+Route::post('kuisioner/post-createStep1', 'KuisionerController@postCreateStep1')->name('kuisioner.postCreateStep1');
+
+Route::get('kuisioner/create-step2', 'KuisionerController@createStep2')->name('kuisioner.createStep2');
+Route::post('kuisioner/post-step2', 'KuisionerController@postCreateStep2')->name('kuisioner.postCreateStep2');

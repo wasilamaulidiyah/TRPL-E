@@ -4,14 +4,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <form method="POST" action="#" enctype="multipart/form-data">
+          <form method="POST" action="{{route('kuisioner.postCreateStep2')}}" enctype="multipart/form-data" enctype="multipart/form-data">
             <div class="card">
               <div class="card-header">Kucing Remaja (4-8 Minggu)</div>
               <div class="card-body">
                     @csrf
                     <div class="form-group">
                     <div class="col-md-12">
-                            <label>Apakah kucing sudah memasuki usia 4 minggu setelah kelahiran?
+                            <label>Apakah kucing sudah memasuki usia diatas 8 minggu ?
                             </label>
                             @php
                               $i = 2;
@@ -19,7 +19,7 @@
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="P1" class="form-check-input" value={{ "$1" }}>{{ $item }}
+                                <input type="radio" name="Q2" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q2', $kuisioner->Q2 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -27,9 +27,9 @@
                             @endphp
                             @endforeach
                             <br>
-                            <label>(Jika No)</label>
+                            <label>(Jika No, mengisi pertanyaan Kitten)</label>
 
-                            @error ('P1')
+                            @error ('Q2')
                               <span class='text-danger'>
                                 <strong>{{ $message }}</strong>
                               </span>
@@ -39,14 +39,14 @@
 
                         <div class="form-group">
                           <div class="col-md-12">
-                            <label>Apakah berat badan kucing ketika lahir sudah setara dengan 100 gram?</label>
+                            <label>Apakah kucing sudah memiliki kurang lebih 30 gigi dewasa pada mulutnya ?</label>
                             @php
                               $i = 2;
                             @endphp
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="P2" class="form-check-input" value={{ "$1" }}>{{ $item }}
+                                <input type="radio" name="Q3" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q3', $kuisioner->Q3 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -54,7 +54,7 @@
                             @endphp
                             @endforeach
 
-                            @error ('P2')
+                            @error ('Q3')
                               <span class='text-danger'>
                                 <strong>{{ $message }}</strong>
                               </span>
@@ -64,14 +64,14 @@
 
                         <div class="form-group">
                           <div class="col-md-12">
-                            <label>Apakah kucing sudah bisa membuka mata ?</label>
+                            <label>Apakah berat badan kucing sudah naik 100% dari berat saat kelahiran ?</label>
                             @php
                               $i = 2;
                             @endphp
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="P3" class="form-check-input" value={{ "$1" }}>{{ $item }}
+                                <input type="radio" name="Q4" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q4', $kuisioner->Q4 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -79,7 +79,7 @@
                             @endphp
                             @endforeach
 
-                            @error ('P3')
+                            @error ('Q4')
                               <span class='text-danger'>
                                 <strong>{{ $message }}</strong>
                               </span>
@@ -89,14 +89,14 @@
 
                         <div class="form-group">
                           <div class="col-md-12">
-                            <label>Apakah kucing sudah bisa berjalan/menggerakkan anggota tubuhnya ?</label>
+                            <label>Apakah kucing sudah bisa beradaptasi dengan lingkungan sekitar?</label>
                             @php
                               $i = 2;
                             @endphp
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="P4" class="form-check-input" value={{ "$1" }}>{{ $item }}
+                                <input type="radio" name="Q5" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q5', $kuisioner->Q5 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -104,7 +104,7 @@
                             @endphp
                             @endforeach
 
-                            @error ('P4')
+                            @error ('Q5')
                               <span class='text-danger'>
                                 <strong>{{ $message }}</strong>
                               </span>
@@ -114,14 +114,14 @@
 
                         <div class="form-group">
                           <div class="col-md-12">
-                            <label>Apakah kucing sudah bisa menyusu pada induknya ?</label>
+                            <label>Apakah kucing sudah terbiasa berkeliling di lingkungan sekitar ?</label>
                             @php
                               $i = 2;
                             @endphp
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="P5" class="form-check-input" value={{ "$1" }}>{{ $item }}
+                                <input type="radio" name="Q6" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q6', $kuisioner->Q6 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -129,9 +129,9 @@
                             @endphp
                             @endforeach
                             <br>
-                            <label>(Jika Yes)</label>
+                            {{-- <label>(Jika Yes)</label> --}}
 
-                            @error ('P5')
+                            @error ('Q6')
                               <span class='text-danger'>
                                 <strong>{{ $message }}</strong>
                               </span>
@@ -141,15 +141,14 @@
 
                         <div class="form-group">
                           <div class="col-md-12">
-                            <label>Apakah kucing mengalami pertambahan berat badan sejak awal kelahiran
-                              (Umumnya berat badan kucing setelah lahir sekitar 100 gram)?</label>
+                            <label>Apakah kucing terbiasa mencari makan secara mandiri ?</label>
                               @php
                                 $i = 2;
                               @endphp
                               @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="P6" class="form-check-input" value={{ "$1" }}>{{ $item }}
+                                <input type="radio" name="Q7" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q7', $kuisioner->Q7 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -157,7 +156,7 @@
                             @endphp
                             @endforeach
 
-                            @error ('P6')
+                            @error ('Q7')
                               <span class='text-danger'>
                                 <strong>{{ $message }}</strong>
                               </span>
@@ -167,14 +166,14 @@
 
                         <div class="form-group">
                           <div class="col-md-12">
-                            <label>Apakah kucing sudah bisa menunjukkan respon pengelihatan dan perilaku ?</label>
+                            <label>Apakah kucing sudah bisa kembali ke kandangnya pada waktu tertentu ?</label>
                             @php
                               $i = 2;
                             @endphp
                             @foreach ($keterangan as $item)
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="radio" name="P7" class="form-check-input" value={{ "$1" }}>{{ $item }}
+                                <input type="radio" name="Q8" class="form-check-input" value="{{ $1 }}" {{ $1 == old('Q8', $kuisioner->Q8 ?? '') ? 'checked' : '' }}>{{ $item }}
                               </label>
                             </div>
                             @php
@@ -182,57 +181,7 @@
                             @endphp
                             @endforeach
 
-                            @error ('P7')
-                              <span class='text-danger'>
-                                <strong>{{ $message }}</strong>
-                              </span>
-                            @enderror
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <div class="col-md-12">
-                            <label>Apakah kucing sudah bisa menunjukkan respon pendengaran dan interaksi dengan saudara kandungnya ?</label>
-                            @php
-                              $i = 2;
-                            @endphp
-                            @foreach ($keterangan as $item)
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" name="P8" class="form-check-input" value={{ "$1" }}>{{ $item }}
-                              </label>
-                            </div>
-                            @php
-                              $i--;
-                            @endphp
-                            @endforeach
-
-                            @error ('P8')
-                              <span class='text-danger'>
-                                <strong>{{ $message }}</strong>
-                              </span>
-                            @enderror
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <div class="col-md-12">
-                            <label>Apakah kucing sudah terbiasa menyusu kepada induknya ?</label>
-                            @php
-                              $i = 2;
-                            @endphp
-                            @foreach ($keterangan as $item)
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" name="P9" class="form-check-input" value={{ "$1" }}>{{ $item }}
-                              </label>
-                            </div>
-                            @php
-                              $i--;
-                            @endphp
-                            @endforeach
-
-                            @error ('P9')
+                            @error ('Q8')
                               <span class='text-danger'>
                                 <strong>{{ $message }}</strong>
                               </span>
@@ -243,6 +192,7 @@
                     <div class = "card-footer text-right">
                       <div class="form-group row mb-0">
                           <div class="col-md-12">
+                            <a href="{{ route('kuisioner.createStep1') }}" class="btn btn-danger">Kembali</a>
                               <button type="submit" class="btn btn-primary">
                                   Next
                               </button>

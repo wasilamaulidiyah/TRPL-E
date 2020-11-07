@@ -36,13 +36,34 @@ class KuisionerController extends Controller
     }
     else {
       $kuisioner = $request->session()->get('kuisioner');
-      $kuisioner->fill($request->all());
+      // <!--$kuisioner->fill($request->all());-->
 
-      $save = $kuisioner->save();
-      if($save){
-        $request->session()->put('kuisioner', $kuisioner);
-        return redirect('kuisioner/create-step1')->with(['message'=> 'Jawaban Berhasil Disimpan']);
+      // $save = $kuisioner->save();
+      // if($save){
+      //   $request->session()->put('kuisioner', $kuisioner);
+        // return redirect('kuisioner/create-step1')->with(['message'=> 'Jawaban Berhasil Disimpan']);
       }
+      return redirect('kuisioner/create-step2');
     }
-  }
+
+    public function createStep2(Request $request){
+      $value = new JawabanKuisioner();
+      $data['keterangan'] = $value->keterangan;
+      $data['kuisioner'] = $request->session()->get('kuisioner');
+      return view('kuisioner.create-step2', $data);
+    }
+
+    public function postCreateStep2(Request $request)
+    {
+      $request->validate([
+        'Q2'=>'required',
+        'Q3'=>'required',
+        'Q4'=>'required',
+        'Q5'=>'required',
+        'Q6'=>'required',
+        'Q7'=>'required',
+        'Q8'=>'required',
+      ]);
+    }
+
 }
