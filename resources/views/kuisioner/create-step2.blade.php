@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <form method="POST" action="{{route('kuisioner.postCreateStep1')}}" enctype="multipart/form-data">
+          <form method="POST" action="#" enctype="multipart/form-data">
             <div class="card">
-              <div class="card-header">Kitten (1-4 Minggu)</div>
+              <div class="card-header">Kucing Remaja (4-8 Minggu)</div>
               <div class="card-body">
                     @csrf
                     <div class="form-group">
@@ -244,7 +244,7 @@
                       <div class="form-group row mb-0">
                           <div class="col-md-12">
                               <button type="submit" class="btn btn-primary">
-                                  Simpan
+                                  Next
                               </button>
                           </div>
                       </div>

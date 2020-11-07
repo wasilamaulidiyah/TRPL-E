@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                  Pet Care
+                   Pet Care
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -49,9 +49,24 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                              <a href="{{ route('kuisioner.createStep1') }}" class="nav-link">Kuisioner</a>
-                            </li>
+                            <li class="nav-item dropdown">
+                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Kuisioner<span class="caret"></span>
+                              </a>
+
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="{{ route('kuisioner.createStep1') }}"
+                                     onclick="event.preventDefault();
+                                                   document.getElementById('create-step1').submit();">
+                                      Kitten (1-4 Minggu)
+                                  </a>
+                                  <form id="create-step1" action="{{ route('kuisioner.createStep1') }}" method="GET">
+                                      @csrf
+                                  </form>
+                                  
+                                </div>
+                              </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
