@@ -9,5 +9,5 @@ use App\Models\JawabanKuisioner;
 class Kuisioner extends Model
 {
     protected $table = 'kuisioner';
-    protected $fillable = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6','Q7', 'Q8', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6'];
+    protected $fillable = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6','Q7', 'Q8'];
 }

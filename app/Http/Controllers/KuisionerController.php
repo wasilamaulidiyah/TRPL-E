@@ -60,12 +60,13 @@ class KuisionerController extends Controller
         'Q7'=>'required',
         'Q8'=>'required',
       ]);
+
       $kuisioner = $request->session()->get('kuisioner');
       $kuisioner->fill($request->all());
-      $save = $kuisioner->save();
+      $save = $kuisioner -> save();
       if($save)
       {
-        $request->session()->put('kuisioner');
+        $request->session()-> put('kuisioner');
         return redirect('kuisioner/create-step1')->with(['message'=> 'Jawaban Berhasil Disimpan']);
       }
     }

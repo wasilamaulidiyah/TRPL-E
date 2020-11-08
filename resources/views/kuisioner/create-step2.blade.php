@@ -193,7 +193,7 @@
                           <div class="col-md-12">
                             <a href="{{ route('kuisioner.createStep1') }}" class="btn btn-danger">Kembali</a>
                               <button type="submit" class="btn btn-primary">
-                                  Simpan
+                                  Kirim
                               </button>
                           </div>
                       </div>

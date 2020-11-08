@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableKuisioner extends Migration
+class CreateKuisionerTable extends Migration
 {
 
     public function up()
     {
-        Schema::create('table_kuisioner', function (Blueprint $table) {
+        Schema::create('kuisioner', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('P1')->nullable();
             $table->char('P2')->nullable();
@@ -27,7 +27,7 @@ class CreateTableKuisioner extends Migration
             $table->char('Q6')->nullable();
             $table->char('Q7')->nullable();
             $table->char('Q8')->nullable();
-            
+
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ class CreateTableKuisioner extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('table_kuisioner');
+        Schema::dropIfExists('kuisioner');
     }
 }
