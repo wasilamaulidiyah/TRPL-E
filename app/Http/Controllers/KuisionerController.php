@@ -28,6 +28,7 @@ class KuisionerController extends Controller
       'P8'=>'required',
       'P9'=>'required'
     ]);
+
     if (empty($request->session()->get('kuisioner')))
     {
       $kuisioner = new Kuisioner();
@@ -39,8 +40,19 @@ class KuisionerController extends Controller
       $kuisioner->fill($request->all());
       $request->session()->put('kuisioner', $kuisioner);
     }
-      return redirect('kuisioner/create-step2');
+      return redirect('kuisioner/create-step1')->with(['message'=> 'Jawaban Berhasil Disimpan']);
     }
+
+  //   $kuisioner = $request->session()->get('kuisioner');
+  //   $kuisioner -> fill($request->all());
+  //   $request->session()->put('kuisioner', $kuisioner);
+  //   $save = $kuisioner -> save();
+  //   if($save)
+  //   {
+  //     $request->session()-> put('kuisioner');
+  //     return redirect('kuisioner/create-step1')->with(['message'=> 'Jawaban Berhasil Disimpan']);
+  //   }
+  // }
 
     public function createStep2(Request $request){
       $value = new JawabanKuisioner();
@@ -61,14 +73,51 @@ class KuisionerController extends Controller
         'Q8'=>'required',
       ]);
 
-      $kuisioner = $request->session()->get('kuisioner');
-      $kuisioner->fill($request->all());
-      $save = $kuisioner -> save();
-      if($save)
+      if (empty($request->session()->get('kuisioner')))
       {
-        $request->session()-> put('kuisioner');
+        $kuisioner = new Kuisioner();
+        $kuisioner->fill($request->all());
+        $request->session()->put('kuisioner', $kuisioner);
+      }
+      else {
+        $kuisioner = $request->session()->get('kuisioner');
+        $kuisioner->fill($request->all());
+        $request->session()->put('kuisioner', $kuisioner);
+      }
         return redirect('kuisioner/create-step1')->with(['message'=> 'Jawaban Berhasil Disimpan']);
       }
+
+
+    public function createStep3(Request $request){
+      $value = new JawabanKuisioner();
+      $data['keterangan'] = $value->keterangan;
+      $data['kuisioner'] = $request->session()->get('kuisioner');
+      return view('kuisioner.create-step3', $data);
     }
 
-}
+    public function postCreateStep3(Request $request)
+    {
+      $request->validate([
+        'R2'=>'required',
+        'R3'=>'required',
+        'R4'=>'required',
+        'R5'=>'required',
+        'R6'=>'required',
+        'R7'=>'required',
+      ]);
+
+      if (empty($request->session()->get('kuisioner')))
+      {
+        $kuisioner = new Kuisioner();
+        $kuisioner->fill($request->all());
+        $request->session()->put('kuisioner', $kuisioner);
+      }
+      else {
+        $kuisioner = $request->session()->get('kuisioner');
+        $kuisioner->fill($request->all());
+        $request->session()->put('kuisioner', $kuisioner);
+      }
+        return redirect('kuisioner/create-step1')->with(['message'=> 'Jawaban Berhasil Disimpan']);
+      }
+    
+  }

@@ -24,3 +24,6 @@ Route::post('kuisioner/post-createStep1', 'KuisionerController@postCreateStep1')
 
 Route::get('kuisioner/create-step2', 'KuisionerController@createStep2')->name('kuisioner.createStep2');
 Route::post('kuisioner/post-step2', 'KuisionerController@postCreateStep2')->name('kuisioner.postCreateStep2');
+
+Route::get('kuisioner/create-step3', 'KuisionerController@createStep3')->name('kuisioner.createStep3');
+Route::post('kuisioner/post-step3', 'KuisionerController@postCreateStep3')->name('kuisioner.postCreateStep3');

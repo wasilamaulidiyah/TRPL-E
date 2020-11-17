@@ -63,8 +63,48 @@
                                   <form id="create-step1" action="{{ route('kuisioner.createStep1') }}" method="GET">
                                       @csrf
                                   </form>
-                                  
+
+                                  <a class="dropdown-item" href="{{ route('kuisioner.createStep2') }}"
+                                     onclick="event.preventDefault();
+                                                   document.getElementById('create-step2').submit();">
+                                      Kucing Remaja (4-8 Minggu)
+                                  </a>
+                                  <form id="create-step2" action="{{ route('kuisioner.createStep2') }}" method="GET">
+                                      @csrf
+                                  </form>
+                                  <a class="dropdown-item" href="{{ route('kuisioner.createStep3') }}"
+                                     onclick="event.preventDefault();
+                                                   document.getElementById('create-step3').submit();">
+                                      Kucing Dewasa (8-12 Minggu)
+                                  </a>
+                                  <form id="create-step3" action="{{ route('kuisioner.createStep3') }}" method="GET">
+                                      @csrf
+                                  </form>
+
                                 </div>
+
+                                {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('kuisioner.createStep2') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('create-step2').submit();">
+                                        Kucing Remaja (4-8 Minggu)
+                                    </a>
+                                    <form id="create-step2" action="{{ route('kuisioner.createStep2') }}" method="GET">
+                                        @csrf
+                                    </form>
+
+                                  </div>
+
+                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="{{ route('kuisioner.createStep3') }}"
+                                         onclick="event.preventDefault();
+                                                       document.getElementById('create-step3').submit();">
+                                          Kucing Dewasa (8-12 Minggu)
+                                      </a>
+                                      <form id="create-step3" action="{{ route('kuisioner.createStep3') }}" method="GET">
+                                          @csrf
+                                      </form>
+                                    </div> --}}
                               </li>
 
                             <li class="nav-item dropdown">
